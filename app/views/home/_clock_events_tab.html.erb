@@ -1,0 +1,20 @@
+<div class="ui tab" data-tab="clock_events">
+  <table class="ui celled table">
+    <thead>
+    <tr>
+      <th>Clock in</th>
+      <th>Clock out</th>
+      <th>Period</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @clock_events.each do |clock_event| %>
+      <tr>
+        <td data-label="Clock in"><%= clock_event.start_at %></td>
+        <td data-label="Clock out"><%= clock_event.stop_at %></td>
+        <td data-label="Period"><%= period(clock_event) %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

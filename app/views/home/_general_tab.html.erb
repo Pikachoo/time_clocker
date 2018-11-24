@@ -1,0 +1,22 @@
+<div class="ui tab active" data-tab="general">
+  <% unless flash[:error].nil? && flash[:alert].nil? %>
+    <div class="ui error message">
+      <%= content_tag :div, 'Errors', class: 'header' %>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :p, msg %>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="field">
+    <a class="ui teal image label">
+      <%= current_user.email %>
+      <div class="detail"><%= current_user.clocked_status %></div>
+    </a>
+  </div>
+  <div class="ui hidden divider"></div>
+  <div class="ui actions">
+    <%= link_to 'Clock In', user_clock_in_path, class: "ui button left green" %>
+    <%= link_to 'Clock Out', user_clock_out_path, class: "ui button right red" %>
+    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "ui button right" %>
+  </div>
+</div>

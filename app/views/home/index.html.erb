@@ -1,0 +1,20 @@
+<% content_for(:header) { 'Home' } %>
+
+<div class="ui top attached tabular menu">
+  <a class="active item" data-tab="general">
+    General
+  </a>
+  <a class="item" data-tab="clock_events">
+    Clock events
+  </a>
+</div>
+<div class="ui bottom attached segment">
+  <%= render partial: 'general_tab' %>
+  <%= render partial: 'clock_events_tab' %>
+</div>
+<script>
+  $(document).ready(function () {
+    $('.tabular.menu .item').tab();
+  });
+</script>
+

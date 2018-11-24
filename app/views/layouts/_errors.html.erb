@@ -1,0 +1,8 @@
+<% unless flash[:error].nil? && flash[:alert].nil? %>
+  <div class="ui error message">
+    <%= content_tag :div, 'Errors', class: 'header' %>
+    <% flash.each do |_name, msg| %>
+      <%= content_tag :p, msg %>
+    <% end %>
+  </div>
+<% end %>
