@@ -14,4 +14,4 @@
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
-//= require semantic-ui/2.1.6/semantic.min
+//= require semantic-ui

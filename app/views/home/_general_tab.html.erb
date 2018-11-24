@@ -17,6 +17,9 @@
   <div class="ui actions">
     <%= link_to 'Clock In', user_clock_in_path, class: "ui button left green" %>
     <%= link_to 'Clock Out', user_clock_out_path, class: "ui button right red" %>
-    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "ui button right" %>
+    <%= link_to destroy_user_session_path, method: :delete, class: "ui button right labeled icon" do%>
+      <i class="right arrow icon"></i>
+      Sign out
+    <% end %>
   </div>
 </div>

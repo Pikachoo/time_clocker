@@ -6,8 +6,6 @@ class User < ApplicationRecord
 
   has_many :clock_events
 
-  attr_reader :clocked_status
-
   def clocked_status
     clock_events.where(stop_at: nil).blank? ? 'Clocked Out' : 'Clocked In'
   end
